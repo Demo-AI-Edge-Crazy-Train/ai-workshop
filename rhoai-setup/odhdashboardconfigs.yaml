@@ -1,0 +1,68 @@
+apiVersion: opendatahub.io/v1alpha
+kind: OdhDashboardConfig
+metadata:
+  annotations:
+    internal.config.kubernetes.io/previousKinds: OdhDashboardConfig
+    internal.config.kubernetes.io/previousNames: odh-dashboard-config
+    internal.config.kubernetes.io/previousNamespaces: default
+  generation: 1
+  labels:
+    app: rhods-dashboard
+    app.kubernetes.io/part-of: rhods-dashboard
+    app.opendatahub.io/rhods-dashboard: "true"
+  name: odh-dashboard-config
+  namespace: redhat-ods-applications
+spec:
+  dashboardConfig:
+    disableAcceleratorProfiles: false
+    disableBYONImageStream: false
+    disableClusterManager: false
+    disableConnectionTypes: true
+    disableCustomServingRuntimes: false
+    disableDistributedWorkloads: false
+    disableHome: false
+    disableISVBadges: false
+    disableInfo: false
+    disableKServe: false
+    disableKServeAuth: false
+    disableKServeMetrics: false
+    disableModelMesh: false
+    disableModelRegistry: false
+    disableModelServing: false
+    disableNIMModelServing: true
+    disablePerformanceMetrics: false
+    disablePipelines: false
+    disableProjectSharing: false
+    disableProjects: false
+    disableStorageClasses: false
+    disableSupport: false
+    disableTracking: false
+    disableTrustyBiasMetrics: false
+    enablement: true
+  groupsConfig:
+    adminGroups: rhods-admins
+    allowedGroups: system:authenticated
+  modelServerSizes:
+  - name: Small
+    resources:
+      limits:
+        cpu: "2"
+        memory: 2Gi
+      requests:
+        cpu: "1"
+        memory: 1Gi
+  notebookController:
+    enabled: true
+    notebookNamespace: rhods-notebooks
+    pvcSize: 20Gi
+  notebookSizes:
+  - name: Small
+    resources:
+      limits:
+        cpu: "2"
+        memory: 2Gi
+      requests:
+        cpu: "1"
+        memory: 1Gi
+  templateDisablement: []
+  templateOrder: []

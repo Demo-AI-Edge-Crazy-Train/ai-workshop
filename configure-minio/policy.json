@@ -1,0 +1,61 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::USER_ID/*",
+          "arn:aws:s3:::USER_ID"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:List*",
+        "Resource": [
+          "arn:aws:s3:::model-registry/*",
+          "arn:aws:s3:::model-registry"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:Get*",
+        "Resource": [
+          "arn:aws:s3:::model-registry/*",
+          "arn:aws:s3:::model-registry"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:List*",
+        "Resource": [
+          "arn:aws:s3:::label-studio-sink/*",
+          "arn:aws:s3:::label-studio-sink"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:Get*",
+        "Resource": [
+          "arn:aws:s3:::label-studio-sink/*",
+          "arn:aws:s3:::label-studio-sink"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:List*",
+        "Resource": [
+          "arn:aws:s3:::data/*",
+          "arn:aws:s3:::data"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:Get*",
+        "Resource": [
+          "arn:aws:s3:::data/*",
+          "arn:aws:s3:::data"
+        ]
+      }
+    ]
+}

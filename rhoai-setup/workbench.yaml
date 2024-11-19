@@ -1,0 +1,29 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: "Contains the minimal requirements for the crazy train model training"
+    opendatahub.io/notebook-image-name: "CUSTOM Crazy train lab"
+    opendatahub.io/notebook-image-origin: Admin
+    opendatahub.io/notebook-image-url:  quay.io/demo-ai-edge-crazy-train/workbench:minimal
+    opendatahub.io/notebook-image-order: "1"
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/notebook-image: "true"
+  name: crazy-train-workshop-minimal
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/notebook-python-dependencies: '[]'
+      opendatahub.io/notebook-software: '[]'
+      openshift.io/imported-from: quay.io/demo-ai-edge-crazy-train/workbench:minimal
+    from:
+      kind: DockerImage
+      name: quay.io/demo-ai-edge-crazy-train/workbench:minimal
+    importPolicy: {}
+    name: minimal
+    referencePolicy:
+      type: Source

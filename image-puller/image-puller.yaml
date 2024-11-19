@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ai-image-puller
+---
+kind: KubernetesImagePuller
+apiVersion: che.eclipse.org/v1alpha1
+metadata:
+  name: ai-image-puller
+  namespace:  ai-image-puller
+spec:
+  daemonsetName: ai-image-puller
+  images: "6f4cb8f7=quay.io/demo-ai-edge-crazy-train/workbench:minimal;9c22b20f=quay.io/demo-ai-edge-crazy-train/activity-pipeline-runtime:v1;22e8b5ae=image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/crazy-train-workshop-minimal:minimal;ca033194=quay.io/modh/openvino_model_server@sha256:c2d063dc4085455aae87f0d94e63cb7d88ba772662e888cb28f46226a8ac4542;0577006b=registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:02b834fd74da71ec37f6a5c0d10aac9a679d1a0f4e510c4f77723ef2367e858a;58cbbdbe=registry.redhat.io/rhel8/mariadb-103@sha256:3d30992e60774f887c4e7959c81b0c41b0d82d042250b3b56f05ab67fd4cdee1;eeaec689=registry.redhat.io/rhoai/odh-data-science-pipelines-argo-argoexec-rhel8@sha256:bc3e44adbd55d45a0213bf5733f7c9ef08c0738ad431e4f279d9cd6c2044ab44;9b5f201f=registry.redhat.io/rhoai/odh-data-science-pipelines-argo-workflowcontroller-rhel8@sha256:a6ff91ef573153a804b75f64c1cee218fa51e111049330ee7262ca134628aa13;7c6a58da=registry.redhat.io/rhoai/odh-mlmd-grpc-server-rhel8@sha256:5ea192be80a8c920bf49c3e09faca7a90ad3c88b0bfad452856d11dcf1928597;c80274d8=registry.redhat.io/rhoai/odh-ml-pipelines-api-server-v2-rhel8@sha256:83283fb780809ec86128bb8f7765b482764aa6e7f984c87915bdbc296381de4e;ecfbe41f=registry.redhat.io/rhoai/odh-ml-pipelines-driver-rhel8@sha256:161ce73c5f397fea57c0e7ab03fbc36b724c2d49024e1e98da9c9d61aedcfd36;3b417db6=registry.redhat.io/rhoai/odh-ml-pipelines-persistenceagent-v2-rhel8@sha256:ff928b8f756aef23df82e9da261f1d82f5a693f3e295fbef623bcf15ac7c08c8;"
